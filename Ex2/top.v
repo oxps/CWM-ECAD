@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Exercise #2 
-// Student Name:
-// Date: 
+// Student Name: Payas Sinha
+// Date: 01/06/2020
 //
 //  Description: In this exercise, you need to design a multiplexer, where the  
 //  output acts according to the following truth table:
