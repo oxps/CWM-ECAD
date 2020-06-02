@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Exercise #6 
-// Student Name:
-// Date: 
+// Student Name: Payas Sinha
+// Date: 02/06/2020
 //
 //
 //  Description: In this exercise, you need to design a multiplexer between a dice and traffic 
@@ -31,12 +31,18 @@ module Ex6(
 	output [2:0] out
 	);
 
-	//Logic	
-	diceroll dice(.clk(clk),.rst(rst),.button(button));
-	traffic trafficlights(.clk(clk));
+	//Define wires
+	wire red;
+	wire amber;
+	wire green;
+	wire [2:0] throw;
 
-	assign out[2:0]=(sel==0)?dice:
-		(sel==1)?trafficlights:
+	//Logic	
+	diceroll dice(.clk(clk),.rst(rst),.button(button),.throw(throw));
+	traffic trafficlights(.clk(clk),.red(red),.amber (amber),.green (green));
+
+	assign out[2:0]=(sel==0)?throw:
+		(sel==1)?{red,amber,green}:
 		0;  
 
 endmodule
