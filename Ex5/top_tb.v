@@ -31,7 +31,7 @@ module top_tb(
 		#(CLK_PERIOD/2) clk=~clk;
 	end
 
-	//Stimulus logic, no separate test for invalid state as testing if loop works is sufficient to see if code is consistent with valid states
+	//Logic, no separate test for invalid state as testing if loop works is sufficient to see if code is consistent with valid states
 	initial begin
 		err=0;
 		#CLK_PERIOD
@@ -69,7 +69,7 @@ module top_tb(
 		#CLK_PERIOD
 		#CLK_PERIOD
 		if(red!=1'b1&&amber!=1'b0&&green!=1'b0)       
-		begin //test for looping consistenct
+		begin //test for looping consistency
           		$display("***TEST FAILED! ERROR IN TRANSITION R0A1G0 TO R1A0G0! red==1, amber==0, green==0 actual red=%d, amber=%d, green=%d***",red,amber,green);
 			err=1;
 		end
