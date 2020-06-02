@@ -99,13 +99,14 @@ module top_tb(
           $display("***TEST FAILED! RESET NOT WORKING! throw==1, actual counter_out=%d ***",throw);
           err=1;
         end
+	rst=0;
     end
 
     //An initial block that ends the simulation, and declares success (if valid)
     initial begin
        #130
        if (err==0)
-         $display("***Test Passed. Your roll is: %d***", throw);
+         $display("***TEST PASSED!***");
        $finish;
     end
 
