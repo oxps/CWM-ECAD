@@ -20,3 +20,21 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
+`timescale 1ns / 100ps
+
+module Ex6(
+	//Define inputs
+	input clk,
+	input sel,
+	input rst,
+	input button,
+	output [2:0] out
+	);
+
+	//Logic	
+	assign out[3:0]=(sel==0)?(diceroll(.clk(clk),.rst(rst),.button(button))):
+		(sel==1)?(traffic(.clk(clk))):
+		0;  
+
+endmodule
+
