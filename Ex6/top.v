@@ -32,11 +32,11 @@ module Ex6(
 	);
 
 	//Logic	
-	diceroll dice_result(.clk(clk),.rst(rst),.button(button));
-	traffic traffic_result(.clk(clk));
+	diceroll dice(.clk(clk),.rst(rst),.button(button));
+	traffic trafficlights(.clk(clk));
 
-	assign out[2:0]=(sel==0)?dice_result:
-		(sel==1)?traffic_result:
+	assign out[2:0]=(sel==0)?dice:
+		(sel==1)?trafficlights:
 		0;  
 
 endmodule
