@@ -45,9 +45,9 @@ module multiplier(
 
 	//Logic
 	assign s_axi_araddr[31:0]=(a*8)+b;
-	assign s_axi_awaddr[31:0]=1;
-	assign s_axi_wdata[31:0]=1;
-	assign s_axi_wstrb[3:0]=1;
+	assign s_axi_awaddr[31:0]=0;
+	assign s_axi_wdata[31:0]=0;
+	assign s_axi_wstrb[3:0]=0;
 	assign result[5:0]=s_axi_rdata[5:0];
 
 
@@ -55,7 +55,7 @@ axi4_multiplier your_instance_name (
   .rsta_busy(rsta_busy),          // output wire rsta_busy
   .rstb_busy(rstb_busy),          // output wire rstb_busy
   .s_aclk(clk),                // input wire s_aclk
-  .s_aresetn(rst),          // input wire s_aresetn
+  .s_aresetn(~rst),          // input wire s_aresetn
   .s_axi_awaddr(s_axi_awaddr),    // input wire [31 : 0] s_axi_awaddr
   .s_axi_awvalid(read),  // input wire s_axi_awvalid
   .s_axi_awready(s_axi_awready),  // output wire s_axi_awready
