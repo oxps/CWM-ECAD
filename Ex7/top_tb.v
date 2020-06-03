@@ -34,14 +34,40 @@ module top_tb(
 
 	//Testing
 	initial begin
-		read=0;
+		read=1;
 		err=0;
 		a<=3'd5;
 		b<=3'd6;
-		#10
-		read=1;
-		#100
+		#20
+		if(result!=6'd30)
+      		begin //Test for alternating between dice and button
+          		$display("***TEST FAILED! 5x6=30! result==30, actual result=%d ***",result);
+          		err=1;
+       		end
+		a<=3'd2;
+		b<=3'd6;
+		#20
+		if(result!=6'd12)
+      		begin //Test for alternating between dice and button
+          		$display("***TEST FAILED! 2x6=12! result==12, actual result=%d ***",result);
+          		err=1;
+       		end
+		a<=3'd3;
+		b<=3'd5;
 		read=0;
+		#20
+		if(result!=6'd12)
+      		begin //Test for alternating between dice and button
+          		$display("***TEST FAILED! CHECK DISABLE FUNCTIONALITY! result==12, actual result=%d ***",result);
+          		err=1;
+       		end
+		read=1;
+		#20
+		if(result!=6'd15)
+      		begin //Test for alternating between dice and button
+          		$display("***TEST FAILED! CHECK ENABLE FUNCTIONALITY! result==15, actual result=%d ***",result);
+          		err=1;
+       		end
 	end
 		 
 	//Finish simulation and check for success

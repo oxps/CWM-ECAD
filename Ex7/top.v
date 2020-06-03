@@ -26,13 +26,11 @@ module multiplier(
 	);
 
 	//Define registers
-	reg address;
+	wire [5:0] address;
 
 	//Logic
-	always @*
-	begin
-	address = (a*8) + b;
-	end
+	assign address[5:0]=(a*8)+b;
+
 
 	memory_multiplier memory_multiplier_project(
 		.clka(clk),    // input wire clka
