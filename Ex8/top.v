@@ -41,10 +41,10 @@ module multiplier(
 	wire [31:0] s_axi_awaddr;
 	wire [31:0] s_axi_wdata;
 	wire [31:0] s_axi_araddr;
-    wire [3:0] s_axi_wstrb;
+    	wire [3:0] s_axi_wstrb;
 
 	//Logic
-	assign s_axi_araddr[31:0]=(a*8)+b;
+	assign s_axi_araddr[31:0]=((a*8)+b)*4;
 	assign s_axi_awaddr[31:0]=0;
 	assign s_axi_wdata[31:0]=0;
 	assign s_axi_wstrb[3:0]=0;

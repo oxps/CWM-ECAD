@@ -32,11 +32,11 @@ module top_tb(
 	forever
 		#(CLK_PERIOD/2) clk=~clk;
 	end
-
+	
 	//Testing
 	initial begin
-		read=1;
 		rst=0;
+		read=1;
 		err=0;
 		a<=3'd5;
 		b<=3'd6;
@@ -74,9 +74,9 @@ module top_tb(
 		 
 	//Finish simulation and check for success
 	initial begin
-	#150
+	#110
 	if (err==0)
-		$display("***TEST PASSED! YOUR RESULT IS: %d***", result);
+		$display("***TEST PASSED - YOUR RESULT IS: %d***", result);
 	$finish;
 	end
 
