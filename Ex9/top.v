@@ -56,11 +56,16 @@ module top(
 		state1<=1'b0;
 		state2<=1'b0;
 		end
+	else if (rst_n==1'b0) begin
+		state0<=1'b0;
+		state1<=1'b0;
+		state2<=1'b0;
+		end
 	else begin
 		counter<=counter+1;
 		state0<=counter[20];
-		state1<=counter[20];
-		state2<=counter[20];
+		state1<=counter[21];
+		state2<=counter[22];
 	end
 	
 
