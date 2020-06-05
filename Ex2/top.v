@@ -28,7 +28,7 @@ module mux(
     output out
     );
     
-    //Todo: define registers and wires here
+    //Todo: define registers and/or wires here
     wire out;
 
     //Todo: define your logic here      
