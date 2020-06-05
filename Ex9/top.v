@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Exercise #9 
 // Student Name: Payas Sinha
-// Date: 05/06/2020
+// Date: 04/06/2020
 //
 //  Description: In this exercise, you need to design a module that lights leds
 //  at different frequencies
